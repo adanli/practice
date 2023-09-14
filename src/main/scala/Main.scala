@@ -1,6 +1,7 @@
 package cn.egg
 
 object Main {
+
   def main(args: Array[String]): Unit = {
     println("Hello world!")
 
@@ -18,7 +19,32 @@ object Main {
     str.split(' ').foreach(println)
 
     val name = "aaa"
-    println(s"his name is ${name.length} characters long")
+    println(s"his name is ${name.length} characters long\n")
+
+    println(f"his name is $name%s, ${name.length}%d characters long\n")
+
+    println("Hello World".map(_.toUpper))
+
+    for(c <- "Hello World") println(c.toUpper)
+
+    for(c <- "Hello World") yield println(c.toUpper)
+
+    val result = for(c <- "Hello World" if c!='e') yield c.toUpper
+    println(result.map(_.toLower))
+
+    val result2 = for {
+      c <- "Hello World"
+      if c!='l'
+    } yield c.toUpper
+    println(result2.map(_.toLower))
+
+    println("HELLO".map(toLowerCase))
 
   }
+
+  private def toLowerCase(c: Char): Char = {
+    (c.toByte + 32).toChar
+  }
+
+
 }
