@@ -7,3 +7,5 @@ lazy val root = (project in file("."))
     name := "practice",
     idePackagePrefix := Some("cn.egg")
   )
+
+libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.32.0"

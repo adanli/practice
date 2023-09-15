@@ -1,6 +1,9 @@
 package cn.egg
 
-object Main {
+/**
+ * 字符串
+ */
+object AboutString {
 
   def main(args: Array[String]): Unit = {
     println("Hello world!")
@@ -40,11 +43,32 @@ object Main {
 
     println("HELLO".map(toLowerCase))
 
+    val numPattern = "[0-9]+".r
+    val address = "湖墅南路505号中华保险大厦9楼"
+    println(numPattern.findFirstIn(address))
+    numPattern.findAllIn(address).foreach(println)
+
+    println(address.replaceAll("[0-9]", "x"))
+
+    val addressDetailPattern = "\\S+([0-9]+)\\S+([0-9]+)\\S+".r
+    val addressDetailPattern(num, floor) = address
+    println(s"num: $num, floor: $floor")
+
+    println("HAL".increment)
+    println(123.increment)
+
   }
 
   private def toLowerCase(c: Char): Char = {
     (c.toByte + 32).toChar
   }
 
+  implicit class SpringImprovements(val s: String) {
+    def increment = s.map(c => (c.toByte + 1).toChar)
+  }
+
+  implicit class IntImprovements(val i: Int) {
+    def increment = i + 1
+  }
 
 }
