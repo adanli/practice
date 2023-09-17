@@ -1,6 +1,7 @@
 package cn.egg
 
 import scala.Console.println
+import scala.annotation.switch
 import scala.util.control.Breaks
 import scala.util.control.Breaks.{break, breakable}
 
@@ -53,6 +54,25 @@ object AboutControl {
     (for(i <- List(1, 2, 3, 4, 5)) yield if(i%2==0) i else 0).foreach(i => print(s"$i "))
     println()
 
+
+    // switch 月份
+    (for(i <- 1 to 12) yield {
+      (i: @switch) match {
+        case 1 => "一月"
+        case 2 => "二月"
+        case 3 => "三月"
+        case 4 => "四月"
+        case 5 => "五月"
+        case 6 => "六月"
+        case 7 => "七月"
+        case 8 => "八月"
+        case 9 => "九月"
+        case 10 => "十月"
+        case 11 => "十一月"
+        case 12 => "十二月"
+        case _ => "未知月份"
+      }
+    }).foreach(println)
 
 
   }
