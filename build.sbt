@@ -9,3 +9,10 @@ lazy val root = (project in file("."))
   )
 
 libraryDependencies += "com.github.nscala-time" %% "nscala-time" % "2.32.0"
+libraryDependencies += "com.typesafe.akka" %% "akka-actor" % "2.8.4"
+// https://mvnrepository.com/artifact/net.liftweb/lift-json
+
+libraryDependencies += "net.liftweb" %% "lift-json" % "3.5.0"
+
+// https://mvnrepository.com/artifact/com.google.code.gson/gson
+libraryDependencies += "com.google.code.gson" % "gson" % "2.10.1"
