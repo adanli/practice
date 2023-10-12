@@ -6,7 +6,18 @@ package cn.egg
 object AboutCollect {
 
   def main(args: Array[String]): Unit = {
-    val list: List[Int] = List(1, 2, 3, 4, 5, 5, 6)
+    var arr: Array[Int] = Array(1, 2, 3, 4, 5, 5, 6)
+
+    arr = arr :+ 1
+
+    arr.foreach(print_)
+    println()
+
+    var list: List[Int] = List(1, 2, 3, 4, 5, 5, 6)
+    list = list :+ 1
+
+    list.foreach(print_)
+    println()
 
     /**
      * 过滤方法
